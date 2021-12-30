@@ -1,12 +1,10 @@
 import org.json.JSONArray;
 import org.json.JSONObject;
-
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
-import java.sql.SQLException;
 
 
 public class APIConnector {
@@ -16,7 +14,7 @@ public class APIConnector {
     String rapidAPIHost = "covid-193.p.rapidapi.com";
     String rapidAPIKey = "35259ae04fmsh67dd00c8c8381f4p18ec07jsn91ff33ef1de3";
 
-    public static synchronized APIConnector getInstance() throws SQLException {
+    public static synchronized APIConnector getInstance() {
         if (instance == null) {
             instance = new APIConnector();
         }
@@ -78,10 +76,3 @@ public class APIConnector {
 
 
 }
-
-
-/*
-
-
-
- */

@@ -42,7 +42,6 @@ public class CountriesStatsController {
             JSONObject stats = APIConnector.getInstance().getCountryStats(countryModel.getCountry());
             JSONObject cases = APIConnector.getInstance().getCases(countryModel.getCountry());
             System.out.println(cases);
-            try {
                 date.setText(stats.getString("day"));
                 update.setText(stats.getString("time"));
                 newCases.setText(cases.getString("new"));
@@ -52,15 +51,10 @@ public class CountriesStatsController {
                 active.setText(String.valueOf(cases.getInt("active")));
                 country.setText(stats.getString("country"));
                 continent.setText(stats.getString("continent"));
-            } catch (JSONException e){
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setContentText("Incomplete Information");
-                alert.showAndWait();
-            }
-
-
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        } catch (JSONException e) {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setContentText("Incomplete Information");
+            alert.showAndWait();
         }
 
     }
@@ -69,7 +63,7 @@ public class CountriesStatsController {
         vh.openCountriesListScene();
     }
 
-    public void refresh(ActionEvent actionEvent) {
+    public void refresh() {
         init(vh, countryModel);
     }
 }

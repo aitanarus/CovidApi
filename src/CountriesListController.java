@@ -15,14 +15,10 @@ public class CountriesListController {
         this.vh = vh;
         this.countryModel = countryModel;
 
-        try {
             JSONArray array = APIConnector.getInstance().getCountries();
             for (int i = 0; i < array.length(); i++) {
                 countriesList.getItems().add(array.get(i));
             }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
 
     }
 
