@@ -1,3 +1,3 @@
-# Covid Api
+# Countries Covid Tracker
 
-https://rapidapi.com/api-sports/api/covid-193/
+Used api: https://rapidapi.com/api-sports/api/covid-193/
